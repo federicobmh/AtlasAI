@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AtlasAI - Your Personal Assistant</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js"></script>
+</head>
+<body>
+  <h1>📝 AtlasAI - Your Personal Assistant</h1>
+
+  <!-- Login Section -->
+  <div id="login-section">
+    <button onclick="signInWithGoogle()">🚀 Sign in with Google</button>
+    <button onclick="signInWithEmail()">🔑 Sign in with Email</button>
+    <button onclick="signOut()">❌ Sign out</button>
+  </div>
+
+  <!-- Note Section -->
+  <label><strong>Note Category (tag):</strong></label>
+  <input type="text" id="noteTag" placeholder="e.g. AI, Travel, Business">
+
+  <label><strong>Memory Slot:</strong></label>
+  <input type="text" id="slotName" placeholder="Type memory name">
+  <button onclick="saveSlot()">💾 Save</button>
+  <button onclick="loadSlot()">📂 Load</button>
+
+  <label><strong>Your Notes:</strong></label>
+  <textarea id="infoInput" rows="8" placeholder="Type ideas, facts, or thoughts here..."></textarea>
+
+  <label><strong>Ask a Question:</strong></label>
+  <input type="text" id="questionInput" placeholder="e.g. What about AI?">
+  <button onclick="respondToQuestion()">🤖 Ask AtlasAI</button>
+  <button onclick="startVoiceInput()">🎤 Speak Question</button>
+  <button onclick="speakResponse()">🔊 Read Response</button>
+  <button onclick="exportNotes()">📁 Export Notes</button>
+  <button onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+
+  <h2>🧠 AtlasAI Response:</h2>
+  <div id="botResponse">AtlasAI will respond here using your notes.</div>
+
+  <script src="app.js"></script>
+</body>
+</html>
